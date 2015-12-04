@@ -6,34 +6,16 @@
 #include <QPointF>
 #include <QVector>
 #include <Math.h>
+#include "graphplot.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-        QVector <QPointF> points;
+        QApplication a(argc, argv);
 
-        // Fill in points with n number of points
-        for(int i = 0; i< 100; i++){
-            if (i>50)
-            {
-                points.append(QPointF(i, 100-i));
-            }
-            else{
-           points.append(QPointF(i, i));
-            }
-        }
 
-        // Create a view, put a scene in it and add tiny circles
-        // in the scene
-        QGraphicsView * view = new QGraphicsView();
-        QGraphicsScene * scene = new QGraphicsScene();
-        view->setScene(scene);
+        graphplot * graph = new graphplot();
 
-        for(int i = 0; i< points.size(); i++)
-            scene->addEllipse(points[i].x(), points[i].y(), 1, 1);
-
-        // Show the view
-        view->show();
+        graph->plotgraph();
 
         // or add the view to the layout inside another widget
 
