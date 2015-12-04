@@ -14,13 +14,8 @@ int main(int argc, char *argv[])
 
         // Fill in points with n number of points
         for(int i = 0; i< 100; i++){
-            if (i>50)
-            {
-                points.append(QPointF(i, 100-i));
-            }
-            else{
-           points.append(QPointF(i, i));
-            }
+            points.append(QPointF(i*5, i*5));
+
         }
 
         // Create a view, put a scene in it and add tiny circles
