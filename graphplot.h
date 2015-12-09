@@ -9,13 +9,25 @@
 
 using namespace std;
 
+inline bool isInvalidData(double value)
+{
+    return qIsNaN(value) || qIsInf(value);
+}
+
+inline bool isInvalidData(double value1, double value2)
+{
+    return isInvalidData(value1) || isInvalidData(value2);
+}
+
+
+
 class graphplot
 {
 private:
     QVector <QPointF>* graphPoints;
 public:
     graphplot();
-    graphplot(vector<int>* points);
+    graphplot(QVector<QPointF>* points);
     void plotgraph();
 };
 
